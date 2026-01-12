@@ -18,6 +18,8 @@
   --gradient-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --gradient-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+  /**/
+
   /* Typography */
   --font-family: "Noto Sans", sans-serif;
   --font-weight-regular: 400;
@@ -37,12 +39,18 @@
 }
 
 body {
+  font-family: var(--font-family);
   background: var(--gradient-dark);
+  color: var(--neutral-100);
   background-repeat: no-repeat;
   background-size: contain;
   height: 100%;
-  color: var(--neutral-100);
-  font-family: var(--font-family);
+
+}
+
+.theme-light {
+  color: var(--neutral-800);
+  background: var(--gradient-light);
 }
 
 .btn {
@@ -80,10 +88,11 @@ body {
     padding: 0.7rem;
     border-radius: 12px;
 
-    .light-dark {
+    .theme-toggle {
       background: var(--neutral-700);
       padding: 0.8rem;
       border-radius: 12px;
+      cursor: pointer;
     }
   }
 
@@ -105,18 +114,19 @@ body {
 
   .group-box-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(min(100% , 320px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     /* Auto-fit -> Crie quantas colunas couberem no espaço disponível"** */
     grid-gap: 1rem;
 
     .box-list {
+      display: flex;
+      flex-direction: column;
       padding: 1rem;
       border: 1px solid var(--neutral-600);
       border-radius: 1rem;
       background: var(--neutral-800);
       color: var(--neutral-100);
       font-size: 1rem;
-      gap: 1rem;
     }
 
     .list-info {
@@ -135,7 +145,8 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }   
+      margin-top: auto;
+    }
 
     .actions button {
       height: fit-content;
