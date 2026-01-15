@@ -18,7 +18,16 @@
   --gradient-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --gradient-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
 
-  /**/
+  /*Variables colors for change in light and dark themes*/
+  --theme-toggle: var(--neutral-700);
+  
+  --bg-color: var(--gradient-dark);
+  --bg-btn: var(--neutral-800);
+  --bg-cards: var(--neutral-800);
+  --bg-theme: var(--neutral-600); 
+
+  --text-color: var(--neutral-100);
+  --title-color: var(--neutral-0);
 
   /* Typography */
   --font-family: "Noto Sans", sans-serif;
@@ -40,24 +49,31 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--gradient-dark);
-  color: var(--neutral-100);
+  background: var(--bg-color);
+  color: var(--text-color);
   background-repeat: no-repeat;
   background-size: contain;
   height: 100%;
-
 }
 
-.theme-light {
-  color: var(--neutral-800);
-  background: var(--gradient-light);
+body.theme-light {
+  --text-color: var(--neutral-800);
+  --text-title: var(--neutral-800);
+  --title-color: var(--neutral-800);
+  --bg-color: var(--gradient-light);
+  --bg-cards: var(--neutral-0);
+  --bg-btn: var(--neutral-0);
+  --bg-theme: var(--neutral-2cj00);
+
+  color: var(--text-color);
+  background: var(--bg-color);
 }
 
 .btn {
   border-radius: 2rem;
   border: 1px solid var(--neutral-600);
-  background: var(--neutral-800);
-  color: var(--neutral-100);
+  background-color: var(--bg-btn);
+  color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   transition: all ease 0.3s;
@@ -84,12 +100,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--neutral-800);
+    background: var(--bg-cards);
     padding: 0.7rem;
     border-radius: 12px;
 
     .theme-toggle {
-      background: var(--neutral-700);
+      background-color: var(--bg-theme);
       padding: 0.8rem;
       border-radius: 12px;
       cursor: pointer;
@@ -101,6 +117,10 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
+    h1 {
+      color: var(--title-color);
+    }
 
     nav {
       display: flex;
@@ -122,11 +142,11 @@ body {
       display: flex;
       flex-direction: column;
       padding: 1rem;
-      border: 1px solid var(--neutral-600);
       border-radius: 1rem;
-      background: var(--neutral-800);
-      color: var(--neutral-100);
+      background: var(--bg-cards);
+      color: var(--text-color);
       font-size: 1rem;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
 
     .list-info {
@@ -136,8 +156,11 @@ body {
       margin-bottom: 1rem;
     }
 
+    .list-info h3{
+      color: var(--title-color);
+    }
+
     .list-info .description p {
-      color: var(--neutral-300);
       margin: 0.6rem 0;
     }
 
@@ -160,7 +183,8 @@ body {
       position: relative;
       height: 30px;
       width: 60px;
-      background-color: transparent;
+      border: none;
+      background-color: var(--neutral-600);
     }
 
     .actions .toggle-btn.active {
