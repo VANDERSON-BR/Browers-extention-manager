@@ -20,11 +20,11 @@
 
   /*Variables colors for change in light and dark themes*/
   --theme-toggle: var(--neutral-700);
-  
+
   --bg-color: var(--gradient-dark);
   --bg-btn: var(--neutral-800);
   --bg-cards: var(--neutral-800);
-  --bg-theme: var(--neutral-600); 
+  --bg-theme: var(--neutral-600);
 
   --text-color: var(--neutral-100);
   --title-color: var(--neutral-0);
@@ -53,7 +53,7 @@ body {
   color: var(--text-color);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
+  min-height: 100vh;
 }
 
 body.theme-light {
@@ -63,7 +63,7 @@ body.theme-light {
   --bg-color: var(--gradient-light);
   --bg-cards: var(--neutral-0);
   --bg-btn: var(--neutral-0);
-  --bg-theme: var(--neutral-2cj00);
+  --bg-theme: var(--neutral-200);
 
   color: var(--text-color);
   background: var(--bg-color);
@@ -156,7 +156,7 @@ body.theme-light {
       margin-bottom: 1rem;
     }
 
-    .list-info h3{
+    .list-info h3 {
       color: var(--title-color);
     }
 
@@ -215,4 +215,9 @@ body.theme-light {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+/* Classe para esconder extensões no filtro */
+.hidden {
+  display: none !important;
 }
